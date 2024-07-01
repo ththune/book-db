@@ -18,11 +18,13 @@ CREATE TABLE [dbo].[Lend](
 GO
 ALTER TABLE [dbo].[Lend]  WITH CHECK ADD  CONSTRAINT [FK_Lend_Book] FOREIGN KEY([LendBookId])
 REFERENCES [dbo].[Book] ([BookId])
+ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Lend] CHECK CONSTRAINT [FK_Lend_Book]
 GO
 ALTER TABLE [dbo].[Lend]  WITH CHECK ADD  CONSTRAINT [FK_Lend_Member] FOREIGN KEY([LendMemberId])
 REFERENCES [dbo].[Member] ([MemberId])
+ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Lend] CHECK CONSTRAINT [FK_Lend_Member]
 GO
