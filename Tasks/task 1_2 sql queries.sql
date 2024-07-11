@@ -1,3 +1,10 @@
+/*
+  Opportunity for improvement:
+  FROM and INNER JOINs should use aliases on the tablenames, e.g., 
+  	"FROM Lend l",
+  	"INNER JOIN Book b ON b.book_id = l.lend_book_id"
+*/
+
 -- Task 2.a
 -- Find all books writted by a specific author.
 SELECT author_id, author_firstname, author_lastname, book_id, book_title, book_isbn from Author
