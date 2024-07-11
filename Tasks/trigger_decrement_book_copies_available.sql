@@ -9,7 +9,7 @@ AFTER INSERT
 AS
 BEGIN
     UPDATE Book
-    SET book_copies_available = book_copies_available - 1
+    SET BookCopiesAvailable = BookCopiesAvailable - 1
     FROM Book
-    INNER JOIN inserted ON book_id = inserted.lend_book_id;
+    INNER JOIN inserted ON BookId = inserted.LendBookId;
 END;

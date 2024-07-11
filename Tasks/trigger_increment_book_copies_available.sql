@@ -12,9 +12,9 @@ AFTER UPDATE
 AS
 BEGIN
     UPDATE Book
-    SET book_copies_available = book_copies_available + 1
+    SET BookCopiesAvailable = BookCopiesAvailable + 1
     FROM Book
-    INNER JOIN inserted ON book_id = inserted.lend_book_id
-    INNER JOIN deleted ON book_id = deleted.lend_book_id
-    WHERE inserted.lend_enddate IS NOT NULL AND deleted.lend_enddate IS NULL;
+    INNER JOIN inserted ON BookId = inserted.lend_book_id
+    INNER JOIN deleted ON BookId = deleted.lend_book_id
+    WHERE inserted.LendEnddate IS NOT NULL AND deleted.LendEnddate IS NULL;
 END;
